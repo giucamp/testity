@@ -39,7 +39,7 @@ namespace testity
 
 			TargetPtr clone() const
 			{
-				return TargetPtr(m_type, m_type->clone_instance(m_object));
+				return TargetPtr(m_type, m_type != nullptr ? m_type->clone_instance(m_object) : nullptr );
 			}
 
 			TargetPtr(TargetPtr && i_source) noexcept
