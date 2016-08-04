@@ -86,19 +86,22 @@ namespace testity
 
     void SharedBlockRegistry::remove_block(void * i_block, size_t i_size, size_t i_alignment, size_t i_alignment_offset)
     {
-        TESTITY_ASSERT(m_data != nullptr); // this registry can't be used to remove blocks. Maybe it was used as source for a move.
+		if (i_block != nullptr)
+		{
+			TESTITY_ASSERT(m_data != nullptr); // this registry can't be used to remove blocks. Maybe it was used as source for a move.
 
-        if (m_data != nullptr) // avoid a crash, but
-        {
-            auto & data = *m_data;
-            std::lock_guard<std::mutex> lock(data.m_mutex);
+			if (m_data != nullptr) // avoid a crash, but
+			{
+				auto & data = *m_data;
+				std::lock_guard<std::mutex> lock(data.m_mutex);
 
-            auto it = data.m_allocations.find(i_block);
-            TESTITY_ASSERT(it != data.m_allocations.end());
-            TESTITY_ASSERT(it->second.m_size == i_size);
-            TESTITY_ASSERT(it->second.m_alignment == i_alignment);
-            TESTITY_ASSERT(it->second.m_alignment_offset == i_alignment_offset);
-            data.m_allocations.erase(it);
-        }
+				auto it = data.m_allocations.find(i_block);
+				TESTITY_ASSERT(it != data.m_allocations.end());
+				TESTITY_ASSERT(it->second.m_size == i_size);
+				TESTITY_ASSERT(it->second.m_alignment == i_alignment);
+				TESTITY_ASSERT(it->second.m_alignment_offset == i_alignment_offset);
+				data.m_allocations.erase(it);
+			}
+		}
     }
 }
