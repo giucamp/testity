@@ -60,7 +60,7 @@ namespace testity
                 random_storage_mark_moved_from(i_source.m_data, SIZE);
             }
 
-            RandomStorage & operator = (RandomStorage &&) noexcept
+            RandomStorage & operator = (RandomStorage && i_source) noexcept
             {
                 *this = i_source; // call the copy assignment
                 random_storage_mark_moved_from(i_source.m_data, SIZE);
@@ -1695,7 +1695,7 @@ namespace testity
             TestBase2_VirtualBase() = default;
 
             TestBase2_VirtualBase(int i_seed) : Base(i_seed) {}
-			
+
             // comparison
             bool operator == (const TestBase2_VirtualBase & i_other) const
             {
@@ -1725,7 +1725,7 @@ namespace testity
             detail::TestBase1<DEFAULT_CONSTRUCTOR_SUPPORT, COPY_SUPPORT, MOVE_SUPPORT, SIZE, ALIGNMENT>(i_seed),
             detail::TestBase2<DEFAULT_CONSTRUCTOR_SUPPORT, COPY_SUPPORT, MOVE_SUPPORT, SIZE, ALIGNMENT>(i_seed)
                 { }
-		
+
         size_t hash() const noexcept
         {
             return detail::TestBase1<DEFAULT_CONSTRUCTOR_SUPPORT, COPY_SUPPORT, MOVE_SUPPORT, SIZE, ALIGNMENT>::hash()

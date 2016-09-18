@@ -60,13 +60,13 @@ namespace testity
         {
             exception_check_point();
             void * block = operator new (i_count * sizeof(TYPE));
-            m_block_registry.add_block(block, i_count * sizeof(TYPE), alignof(std::max_align_t));
+            m_block_registry.add_block(block, i_count * sizeof(TYPE), alignof(std::max_align_t), 0);
             return static_cast<TYPE*>(block);
         }
 
         void deallocate(TYPE * i_block, std::size_t i_count)
         {
-            m_block_registry.remove_block(i_block, sizeof(TYPE) * i_count, alignof(std::max_align_t));
+            m_block_registry.remove_block(i_block, sizeof(TYPE) * i_count, alignof(std::max_align_t), 0);
             operator delete( i_block );
         }
 
@@ -77,7 +77,7 @@ namespace testity
         }
 
         template <typename OTHER_TYPE>
-            bool operator != (const TestAllocator<OTHER_TYPE> &) const
+            bool operator != (const TestAllocator<OTHER_TYPE> & i_other) const
         {
             return m_block_registry != i_other.m_block_registry;
         }
