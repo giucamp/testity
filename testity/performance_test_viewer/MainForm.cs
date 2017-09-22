@@ -30,7 +30,7 @@ namespace performance_test_viewer
             m_plot.Dock = DockStyle.Fill;
             panel.Controls.Add(m_plot);
 
-            string backs = "/..";
+            /*string backs = "/..";
             int tries = 0;
             string final_part = "/density_tests/vs2015/perf.txt";
             while (tries < 6 && !File.Exists(System.Environment.CurrentDirectory + backs + final_part))
@@ -39,7 +39,9 @@ namespace performance_test_viewer
                 tries++;
             }
 
-            string file_name = Path.GetFullPath(System.Environment.CurrentDirectory + backs + final_part);
+            string file_name = Path.GetFullPath(System.Environment.CurrentDirectory + backs + final_part); */
+
+            string file_name = "C:/projects/density/density_bench/vs2017/results.txt";
             txtFile.Text = file_name;
         }
 
@@ -88,7 +90,7 @@ namespace performance_test_viewer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            m_fileDiag.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+            m_fileDiag.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif|Png Image|*.png";
             m_fileDiag.FilterIndex = 2;
 
             try
@@ -125,6 +127,10 @@ namespace performance_test_viewer
 
                     case 3:
                         format = System.Drawing.Imaging.ImageFormat.Gif;
+                        break;
+
+                    case 4:
+                        format = System.Drawing.Imaging.ImageFormat.Png;
                         break;
                 }
 

@@ -51,18 +51,12 @@ namespace performance_test_viewer
             }
         }
 
+
         public void SaveScreenshot(string i_fileName, System.Drawing.Imaging.ImageFormat i_format)
         {
-            Rectangle bounds = this.Bounds;
-            bounds = this.RectangleToScreen(bounds);
-            using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
-            {
-                using (Graphics g = Graphics.FromImage(bitmap))
-                {
-                    g.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size);
-                }
-                bitmap.Save(i_fileName, i_format);
-            }
+            Bitmap bmp = new Bitmap(Width, Height);
+            DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+            bmp.Save(i_fileName, i_format);
         }
 
         public TestGroup Group
