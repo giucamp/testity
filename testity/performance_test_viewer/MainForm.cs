@@ -41,7 +41,7 @@ namespace performance_test_viewer
 
             string file_name = Path.GetFullPath(System.Environment.CurrentDirectory + backs + final_part); */
 
-            string file_name = "C:/projects/density/density_bench/vs2017/results.txt";
+            string file_name = "C:/projects/density/bench/vs2017/results.txt";
             txtFile.Text = file_name;
         }
 
@@ -50,11 +50,27 @@ namespace performance_test_viewer
             m_plot.Group = (TestGroup)comboTestGroup.SelectedItem;
         }
 
+        private void RefreshGroupCombo()
+        {
+            comboTestGroup.Items.Clear();
+
+            var filter = txtFilter.Text.Trim();
+
+            var filtered_groups = test_groups.FindAll((group) => {
+                return group.ToString().Contains(filter);
+            });
+
+            comboTestGroup.Items.AddRange(filtered_groups.ToArray());
+
+            if (filtered_groups.Count > 0)
+                comboTestGroup.SelectedItem = filtered_groups[filtered_groups.Count - 1];
+        }
+
         private void txtFile_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                comboTestGroup.Items.Clear();
+                
                 test_groups.Clear();
                 panel.Visible = true;
                 string[] rows = File.ReadAllLines(txtFile.Text);
@@ -73,9 +89,8 @@ namespace performance_test_viewer
                     }
                 }
 
-                comboTestGroup.Items.AddRange(test_groups.ToArray());
+                RefreshGroupCombo();
 
-                comboTestGroup.SelectedItem = test_groups[test_groups.Count - 1];
 
                 m_lastPath = Path.GetDirectoryName(txtFile.Text);
             }
@@ -136,6 +151,11 @@ namespace performance_test_viewer
 
                 m_plot.SaveScreenshot(m_fileDiag.FileName, format);
             }
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            RefreshGroupCombo();
         }
     }
 }
