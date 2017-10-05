@@ -58,7 +58,7 @@ namespace performance_test_viewer
             this.comboTestGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboTestGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTestGroup.FormattingEnabled = true;
-            this.comboTestGroup.Location = new System.Drawing.Point(435, 30);
+            this.comboTestGroup.Location = new System.Drawing.Point(719, 37);
             this.comboTestGroup.Name = "comboTestGroup";
             this.comboTestGroup.Size = new System.Drawing.Size(442, 21);
             this.comboTestGroup.TabIndex = 1;
@@ -73,7 +73,7 @@ namespace performance_test_viewer
             this.txtFile.Location = new System.Drawing.Point(16, 38);
             this.txtFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFile.Name = "txtFile";
-            this.txtFile.Size = new System.Drawing.Size(531, 22);
+            this.txtFile.Size = new System.Drawing.Size(550, 22);
             this.txtFile.TabIndex = 2;
             this.txtFile.TextChanged += new System.EventHandler(this.txtFile_TextChanged);
             // 
@@ -90,18 +90,20 @@ namespace performance_test_viewer
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(432, 11);
+            this.label2.Location = new System.Drawing.Point(576, 14);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.Size = new System.Drawing.Size(105, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Testity - Viewer";
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(883, 13);
+            this.button1.Location = new System.Drawing.Point(1177, 16);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 38);
+            this.button1.Size = new System.Drawing.Size(147, 47);
             this.button1.TabIndex = 5;
             this.button1.Text = "Save &Screenshot";
             this.button1.UseVisualStyleBackColor = true;
@@ -129,6 +131,7 @@ namespace performance_test_viewer
             this.Controls.Add(this.txtFile);
             this.Controls.Add(this.comboTestGroup);
             this.Controls.Add(this.panel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "btnSaveScreenshot";
             this.Text = "Testity - Viewer";
             this.ResumeLayout(false);

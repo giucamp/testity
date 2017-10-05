@@ -47,7 +47,7 @@ namespace performance_test_viewer
 
             if (legendPanel.Controls.Count > 0)
             {
-                splitContainer1.SplitterDistance = ClientSize.Width - legendPanel.Controls[0].Width;
+                splitContainer1.SplitterDistance = Math.Max(ClientSize.Width - legendPanel.Controls[0].Width, 0 );
             }
         }
 
