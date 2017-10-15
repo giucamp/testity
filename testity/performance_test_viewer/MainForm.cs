@@ -106,7 +106,7 @@ namespace performance_test_viewer
         private void button1_Click(object sender, EventArgs e)
         {
             m_fileDiag.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif|Png Image|*.png";
-            m_fileDiag.FilterIndex = 2;
+            m_fileDiag.FilterIndex = 4;
 
             try
             {

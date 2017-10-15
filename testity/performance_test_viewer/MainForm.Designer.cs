@@ -49,9 +49,9 @@ namespace performance_test_viewer
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel.Location = new System.Drawing.Point(23, 78);
-            this.panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel.Margin = new System.Windows.Forms.Padding(4);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1174, 359);
+            this.panel.Size = new System.Drawing.Size(1174, 371);
             this.panel.TabIndex = 0;
             // 
             // comboTestGroup
@@ -60,7 +60,7 @@ namespace performance_test_viewer
             this.comboTestGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTestGroup.FormattingEnabled = true;
             this.comboTestGroup.Location = new System.Drawing.Point(884, 46);
-            this.comboTestGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboTestGroup.Margin = new System.Windows.Forms.Padding(4);
             this.comboTestGroup.Name = "comboTestGroup";
             this.comboTestGroup.Size = new System.Drawing.Size(313, 24);
             this.comboTestGroup.TabIndex = 1;
@@ -73,7 +73,7 @@ namespace performance_test_viewer
             this.txtFile.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtFile.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.txtFile.Location = new System.Drawing.Point(21, 47);
-            this.txtFile.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtFile.Margin = new System.Windows.Forms.Padding(5);
             this.txtFile.Name = "txtFile";
             this.txtFile.Size = new System.Drawing.Size(599, 22);
             this.txtFile.TabIndex = 2;
@@ -103,10 +103,10 @@ namespace performance_test_viewer
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1436, 20);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button1.Location = new System.Drawing.Point(1044, 8);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 58);
+            this.button1.Size = new System.Drawing.Size(152, 29);
             this.button1.TabIndex = 5;
             this.button1.Text = "Save &Screenshot";
             this.button1.UseVisualStyleBackColor = true;
@@ -116,7 +116,7 @@ namespace performance_test_viewer
             // 
             this.txtFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFilter.Location = new System.Drawing.Point(639, 47);
-            this.txtFilter.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtFilter.Margin = new System.Windows.Forms.Padding(5);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(236, 22);
             this.txtFilter.TabIndex = 6;
@@ -127,14 +127,14 @@ namespace performance_test_viewer
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1210, 450);
-            this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFile);
             this.Controls.Add(this.comboTestGroup);
             this.Controls.Add(this.panel);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "btnSaveScreenshot";
             this.Text = "Testity - Viewer";
             this.ResumeLayout(false);
